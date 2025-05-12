@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns1="http://soa.weg.net/eng/maestro/rulemanagerservice" targetNamespace="http://soa.weg.net/eng/maestro/characteristicList" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://brjgsd313378.weg.net:8080/maestro/services/RuleManager?xsd=1" namespace="http://soa.weg.net/eng/maestro/rulemanagerservice" />
+  <xs:element name="RuleManagerRequest" nillable="true" type="ns1:ruleManagerRequest" />
+</xs:schema>

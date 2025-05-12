@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="MaestroMasterDataImporter_IMaestroMasterDataManager_MasterDataManagerService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://brjgsd314072.weg.net:8080/maestro-admin/services/MasterDataManager</Value>
+    </Setting>
+    <Setting Name="MaestroMasterDataImporter_IRuleManagerServiceSoapService_RuleManagerServiceSoapService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://brjgsd313378.weg.net:8080/maestro/services/RuleManager</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

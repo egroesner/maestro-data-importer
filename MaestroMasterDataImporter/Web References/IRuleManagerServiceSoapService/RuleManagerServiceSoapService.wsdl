@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.weg.net/eng/maestro/rulemanagerservice" name="RuleManagerServiceSoapService" targetNamespace="http://soa.weg.net/eng/maestro/rulemanagerservice" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://brjgsd313378.weg.net:8080/maestro/services/RuleManager?xsd=1" namespace="http://soa.weg.net/eng/maestro/rulemanagerservice" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://brjgsd313378.weg.net:8080/maestro/services/RuleManager?xsd=2" namespace="http://soa.weg.net/eng/maestro/characteristicList" />
+    </xsd:schema>
+  </types>
+  <message name="saveRules">
+    <part name="Username" element="tns:Username" />
+    <part xmlns:ns1="http://soa.weg.net/eng/maestro/characteristicList" name="RuleManagerRequest" element="ns1:RuleManagerRequest" />
+  </message>
+  <message name="saveRulesResponse">
+    <part name="RuleManagerResponse" element="tns:RuleManagerResponse" />
+  </message>
+  <portType name="RuleManagerService">
+    <operation name="saveRules" parameterOrder="Username RuleManagerRequest">
+      <input message="tns:saveRules" />
+      <output message="tns:saveRulesResponse" />
+    </operation>
+  </portType>
+  <binding name="RuleManagerServicePortBinding" type="tns:RuleManagerService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="saveRules">
+      <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1" />
+      <input>
+        <soap:body use="literal" parts="RuleManagerRequest" />
+        <soap:header message="tns:saveRules" part="Username" use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="RuleManagerServiceSoapService">
+    <port name="RuleManagerServicePort" binding="tns:RuleManagerServicePortBinding">
+      <soap:address location="http://brjgsd313378.weg.net:8080/maestro/services/RuleManager" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://soa.weg.net/eng/maestro/rulemanagerservice" targetNamespace="http://soa.weg.net/eng/maestro/rulemanagerservice" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CharacteristicListRequest" type="tns:ruleManagerRequest" />
+  <xs:element name="RuleManagerResponse" type="xs:boolean" />
+  <xs:element name="Username" nillable="true" type="xs:string" />
+  <xs:complexType name="ruleManagerRequest">
+    <xs:sequence>
+      <xs:element name="ruleTemplateId" type="xs:long" />
+      <xs:element name="ruleList" type="tns:ruleList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ruleList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Rule" type="tns:simpleRule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="simpleRule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ruleComponent" type="tns:ruleComponent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ruleComponent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="characteristicName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="value" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
